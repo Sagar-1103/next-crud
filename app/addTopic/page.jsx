@@ -15,7 +15,7 @@ export default function AddTopic() {
             return;
         }
         try {
-            const res = await fetch("http://localhost:3000/api/topics",{
+            const res = await fetch("https://next-crud-fawn.vercel.app/api/topics",{
                 method:"POST",
                 headers:{
                     "Content-type":"application/json"
@@ -23,7 +23,7 @@ export default function AddTopic() {
                 body:JSON.stringify({title,description}),
             });
             if (res.ok) {
-                router.push("http://localhost:3000");
+                router.push("https://next-crud-fawn.vercel.app");
                 router.refresh();
             } else{
                 throw new Error("Failed to create a topic!");

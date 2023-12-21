@@ -4,7 +4,7 @@ import {HiPencilAlt} from "react-icons/hi";
 
 const getTopics = async()=>{
     try {
-        const res = await fetch("http://localhost:3000/api/topics",{
+        const res = await fetch("https://next-crud-fawn.vercel.app/api/topics",{
             cache:"no-store",
         });
         if (!res.ok) {
@@ -28,7 +28,7 @@ export default async function TopicsList() {
             </div>
             <div className="flex gap-2">
                 <RemoveBtn id={t._id}/>
-                <Link href={`/editTopic/${t._id}`}>
+                <Link href={`https://next-crud-fawn.vercel.app/api/editTopic/${t._id}`}>
                     <HiPencilAlt size={24}/>
                 </Link>
             </div>
